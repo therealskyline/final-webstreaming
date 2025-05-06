@@ -1,0 +1,195 @@
+{% extends 'base_new.html' %}
+
+{% block title %}{{ anime.title }} - S{{ season.season_number }}E{{ episode.episode_number }} - Anime Zone{% endblock %}
+
+{% block content %}
+<div class="container" style="margin-top: 2rem;">
+    <!-- Breadcrumb -->
+    <div style="margin-bottom: 1.5rem;">
+        <a href="/" style="color: var(--text-secondary);">Accueil</a>
+        <span style="color: var(--text-muted); margin: 0 0.5rem;">/</span>
+        <a href="/anime/{{ anime.id }}" style="color: var(--text-secondary);">{{ anime.title }}</a>
+        <span style="color: var(--text-muted); margin: 0 0.5rem;">/</span>
+        <span style="color: var(--text-primary);">S{{ season.season_number }}E{{ episode.episode_number }}: {{ episode.title }}</span>
+    </div>
+
+    <!-- Video Player -->
+    <div class="video-container">
+        <!-- Lecteur vidéo Google Drive (iframe) -->
+        <div class="player-wrapper">
+            <iframe id="video-player" 
+                    src="https://drive.google.com/file/d/{{ episode.video_url.split('/')[-2] if '/' in episode.video_url else episode.video_url }}/preview" 
+                    allow="autoplay" 
+                    allowfullscreen>
+            </iframe>
+
+            <!-- Overlay pour les contrôles personnalisés -->
+            <div id="player-overlay" class="player-overlay">
+                <div class="play-pause-btn">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Episode Info -->
+    <div style="margin-bottom: 2rem;">
+        <h1 style="font-size: 1.75rem; margin-bottom: 0.5rem;">{{ episode.title }}</h1>
+        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+            <span style="color: var(--accent-color); font-weight: 600;">Saison {{ season.season_number }}, Épisode {{ episode.episode_number }}</span>
+            <span style="margin: 0 0.75rem; color: var(--text-muted);">•</span>
+            <span style="color: var(--text-secondary);">{{ anime.title }}</span>
+        </div>
+        <p style="color: var(--text-secondary);">{{ episode.description }}</p>
+    </div>
+
+    <!-- Episode Navigation -->
+    <div class="player-controls">
+        <div class="episode-navigation">
+            <!-- Previous Episode Button -->
+            {% if episode.episode_number > 1 %}
+            <a href="/player/{{ anime.id }}/{{ season.season_number }}/{{ episode.episode_number - 1 }}" class="btn btn-outline">
+                <i class="fas fa-step-backward"></i> Épisode précédent
+            </a>
+            {% else %}
+            <button class="btn btn-outline" disabled style="opacity: 0.5;">
+                <i class="fas fa-step-backward"></i> Épisode précédent
+            </button>
+            {% endif %}
+
+            <!-- Download Button -->
+            <a href="{{ download_url }}" class="btn btn-primary" download target="_blank">
+                <i class="fas fa-download"></i> Télécharger l'épisode
+            </a>
+
+            <!-- Next Episode Button -->
+            {% if episode.episode_number < season.episodes|length %}
+            <a href="/player/{{ anime.id }}/{{ season.season_number }}/{{ episode.episode_number + 1 }}" class="btn btn-outline next-episode">
+                Épisode suivant <i class="fas fa-step-forward"></i>
+            </a>
+            {% else %}
+            <button class="btn btn-outline" disabled style="opacity: 0.5;">
+                Épisode suivant <i class="fas fa-step-forward"></i>
+            </button>
+            {% endif %}
+        </div>
+
+        <a href="/anime/{{ anime.id }}" class="btn btn-primary">
+            <i class="fas fa-list"></i> Tous les épisodes
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+<style>
+    /* Styles pour le lecteur vidéo personnalisé */
+    .player-wrapper {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%; /* Ratio 16:9 */
+        background-color: #000;
+    }
+
+    .player-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    .player-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .player-wrapper:hover .player-overlay {
+        opacity: 1;
+    }
+
+    .play-pause-btn {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        transition: transform 0.2s ease;
+    }
+
+    .play-pause-btn:hover {
+        transform: scale(1.1);
+    }
+
+    .player-overlay.playing {
+        opacity: 0;
+    }
+
+    .player-wrapper:hover .player-overlay.playing {
+        opacity: 1;
+    }
+
+    .player-overlay.playing .play-pause-btn i {
+        content: "\f04c"; /* Icône pause */
+    }
+</style>
+{% endblock %}
+
+{% block scripts %}
+{% if current_user.is_authenticated %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const animeId = {{ anime.id }};
+        const seasonNumber = {{ season.season_number }};
+        const episodeNumber = {{ episode.episode_number }};
+        const playerOverlay = document.getElementById('player-overlay');
+        const playPauseBtn = document.querySelector('.play-pause-btn i');
+        const videoFrame = document.getElementById('video-player');
+
+        fetch('/save-progress', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                'anime_id': animeId,
+                'season_number': seasonNumber,
+                'episode_number': episodeNumber,
+                'time_position': 0,
+                'completed': false
+            })
+        })
+        .then(response => response.json())
+        .catch(error => console.error('Erreur lors de la sauvegarde de la progression:', error));
+
+        if (playerOverlay) {
+            playerOverlay.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                playerOverlay.classList.toggle('playing');
+                playPauseBtn.className = playerOverlay.classList.contains('playing') ? 'fas fa-pause' : 'fas fa-play';
+            });
+        }
+    });
+</script>
+{% endif %}
+{% endblock %}

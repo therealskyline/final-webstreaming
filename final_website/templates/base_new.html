@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Anime Zone{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="/" class="navbar-brand">
+                Anime<span>Zone</span>
+            </a>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/search" class="nav-link">Catalogue</a>
+                </li>
+            </ul>
+
+            <div class="search-container">
+                <form id="searchForm" action="/search" method="GET">
+                    <input type="text" id="searchInput" name="query" class="search-input" placeholder="Rechercher un anime..." autocomplete="off">
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+
+            {% if current_user.is_authenticated %}
+            <div class="user-menu">
+                <div class="user-avatar" id="userAvatarToggle">
+                    <span>{{ current_user.username[0]|upper }}</span>
+                </div>
+                <div class="user-dropdown" id="userDropdown">
+                    <div class="user-dropdown-header">
+                        <div class="user-info">
+                            <span class="username">{{ current_user.username }}</span>
+                        </div>
+                    </div>
+                    <ul class="user-dropdown-menu">
+                        <li>
+                            <a href="{{ url_for('profile') }}">
+                                <i class="fas fa-user"></i> Mon Profil
+                            </a>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li>
+                            <a href="{{ url_for('logout') }}">
+                                <i class="fas fa-sign-out-alt"></i> Déconnexion
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            {% endif %}
+
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+    <footer class="section" style="background-color: var(--background-card); margin-top: 2rem;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <div style="margin-bottom: 2rem;">
+                    <h3>Anime<span style="color: var(--accent-color);">Zone</span></h3>
+                    <p style="color: var(--text-secondary); max-width: 400px;">
+                        Votre destination ultime pour regarder des animes en ligne.
+                        Parcourez notre vaste collection de séries et profitez de vos émissions préférées.
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h4>Liens Rapides</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="/">Accueil</a></li>
+                        <li><a href="/search">Catalogue</a></li>
+                        {% if current_user.is_authenticated %}
+                        <li><a href="{{ url_for('profile') }}">Mon Profil</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h4>Genres Populaires</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="/search?genre=action">Action</a></li>
+                        <li><a href="/search?genre=adventure">Aventure</a></li>
+                        <li><a href="/search?genre=fantasy">Fantaisie</a></li>
+                        <li><a href="/search?genre=horror">Horreur</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                <p style="color: var(--text-muted);">
+                    &copy; 2025 AnimeZone. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    <!-- User Avatar Dropdown Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userAvatarToggle = document.getElementById('userAvatarToggle');
+            const userDropdown = document.getElementById('userDropdown');
+
+            if (userAvatarToggle && userDropdown) {
+                userAvatarToggle.addEventListener('click', function() {
+                    userDropdown.classList.toggle('show');
+                });
+
+                // Fermer le dropdown quand on clique ailleurs
+                document.addEventListener('click', function(event) {
+                    if (!userAvatarToggle.contains(event.target) && !userDropdown.contains(event.target)) {
+                        userDropdown.classList.remove('show');
+                    }
+                });
+            }
+        });
+    </script>
+
+    <style>
+        /* User Avatar Styles */
+        .user-menu {
+            position: relative;
+            margin-left: 1rem;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .user-avatar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .user-dropdown {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: var(--background-card);
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            width: 220px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .user-dropdown.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .user-dropdown-header {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .user-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .username {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+
+        .user-email {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+
+        .user-dropdown-menu {
+            list-style: none;
+            padding: 0.5rem 0;
+            margin: 0;
+        }
+
+        .user-dropdown-menu li a {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .user-dropdown-menu li a:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+        }
+
+        .user-dropdown-menu li a i {
+            margin-right: 0.75rem;
+            width: 20px;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background-color: var(--border-color);
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .user-dropdown {
+                position: fixed;
+                top: 70px;
+                right: 1rem;
+                width: calc(100% - 2rem);
+                max-width: 300px;
+            }
+
+            .user-avatar {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>

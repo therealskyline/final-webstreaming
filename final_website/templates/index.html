@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block title %}Anime Zone - Accueil{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container hero-content">
+        <h1 class="hero-title">Découvrez le Paradis Anime</h1>
+        <p class="hero-subtitle">
+            Explorez notre vaste collection de séries anime captivantes, des aventures pleines d'action aux histoires émouvantes. Votre prochaine obsession anime vous attend !
+        </p>
+        <a href="/search" class="btn btn-primary">Parcourir les Animes</a>
+    </div>
+</section>
+
+<!-- Featured Anime Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Animes à la Une</h2>
+        
+        <!-- Filter Buttons -->
+        <div class="filter-section">
+            <div class="filter-buttons">
+                <a href="/" class="filter-button active">Tous</a>
+                <a href="/search?genre=action" class="filter-button">Action</a>
+                <a href="/search?genre=adventure" class="filter-button">Aventure</a>
+                <a href="/search?genre=comedy" class="filter-button">Comédie</a>
+                <a href="/search?genre=drama" class="filter-button">Drame</a>
+                <a href="/search?genre=fantasy" class="filter-button">Fantaisie</a>
+                <a href="/search?genre=horror" class="filter-button">Horreur</a>
+                <a href="/search?genre=romance" class="filter-button">Romance</a>
+                <a href="/search?genre=sci-fi" class="filter-button">Sci-Fi</a>
+                <a href="/search?genre=supernatural" class="filter-button">Surnaturel</a>
+                <a href="/search?genre=mystery" class="filter-button">Mystère</a>
+                <a href="/search?genre=thriller" class="filter-button">Thriller</a>
+                <a href="/search" class="filter-button" style="background-color: var(--primary-color); color: white;"><i class="fas fa-search" style="margin-right: 5px;"></i>Plus</a>
+            </div>
+        </div>
+        
+        <!-- Anime Grid -->
+        <div class="anime-grid">
+            {% for anime in anime_list %}
+            <a href="/anime/{{ anime.id }}" class="anime-card-link">
+                <div class="anime-card fade-in">
+                    <img src="{{ anime.image }}" alt="{{ anime.title }}" class="anime-card-image" loading="lazy">
+                    <div class="anime-card-body">
+                        <h3 class="anime-card-title">{{ anime.title }}</h3>
+                        <div class="anime-card-genres">
+                            {% for genre in anime.genres %}
+                            <span class="genre-tag">{{ genre|capitalize }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="anime-card-info">
+                            <div class="anime-card-rating">
+                                <span class="rating-star"><i class="fas fa-star"></i></span>
+                                <span>{{ anime.rating }}</span>
+                            </div>
+                        </div>
+                        <div class="anime-card-actions">
+                            <span class="btn btn-outline">Regarder</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        
+        <!-- View More Button -->
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="/search" class="btn btn-primary">Voir Tous les Animes</a>
+        </div>
+    </div>
+</section>
+
+<!-- Section supplémentaire personnalisable -->
+<section class="section" style="background-color: var(--background-card);">
+    <div class="container">
+        <h2 class="section-title">Découvrir de Nouvelles Séries</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+            <!-- Première div personnalisable -->
+            <div class="custom-anime-card" style="background-color: #333; border-radius: 10px; padding: 1.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <i class="fas fa-star" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                <h4 style="color: #fff; margin-bottom: 0.5rem;">Séries Populaires</h4>
+                <p style="color: #ccc;">Explorez les animes les mieux notés</p>
+                <a href="/search?sort=rating" class="btn btn-outline" style="margin-top: 1rem;">Explorer</a>
+            </div>
+            
+            <!-- Deuxième div personnalisable -->
+            <div class="custom-anime-card" style="background-color: #333; border-radius: 10px; padding: 1.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <i class="fas fa-dragon" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                <h4 style="color: #fff; margin-bottom: 0.5rem;">Fantaisie</h4>
+                <p style="color: #ccc;">Découvrez des mondes imaginaires</p>
+                <a href="/search?genre=fantasy" class="btn btn-outline" style="margin-top: 1rem;">Explorer</a>
+            </div>
+            
+            <!-- Troisième div personnalisable -->
+            <div class="custom-anime-card" style="background-color: #333; border-radius: 10px; padding: 1.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <i class="fas fa-fire" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                <h4 style="color: #fff; margin-bottom: 0.5rem;">Action</h4>
+                <p style="color: #ccc;">Plongez dans des aventures palpitantes</p>
+                <a href="/search?genre=action" class="btn btn-outline" style="margin-top: 1rem;">Explorer</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

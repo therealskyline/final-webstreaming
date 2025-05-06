@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Anime Zone{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #4ECDC4;
+            --dark-color: #1A535C;
+            --light-color: #F7FFF7;
+            --accent-color: #FF6B6B;
+        }
+    
+        body {
+            background-color: #0F0F0F;
+            background-image: url('https://wallpaperaccess.com/full/5921207.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+        
+        .auth-container {
+            width: 100%;
+            max-width: 450px;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .auth-logo {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            transform: scale(1.2);
+        }
+        
+        .auth-logo h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 3rem;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 107, 107, 0.8);
+            margin-bottom: 0.5rem;
+        }
+        
+        .auth-logo h1 span {
+            color: var(--accent-color);
+        }
+        
+        .auth-logo p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            margin-top: -0.5rem;
+        }
+        
+        .auth-card {
+            background-color: rgba(25, 25, 25, 0.85);
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 107, 107, 0.2);
+            padding: 2.5rem;
+            color: #fff;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .auth-footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        .auth-btn {
+            background: linear-gradient(45deg, var(--accent-color), #ff9a9a);
+            border: none;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.9rem 0;
+            width: 100%;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+            margin-top: 1rem;
+        }
+        
+        .auth-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.5);
+            background: linear-gradient(45deg, #ff5757, #ff8a8a);
+        }
+        
+        .auth-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        
+        .auth-link:hover {
+            color: #ff8a8a;
+            text-decoration: none;
+            text-shadow: 0 0 8px rgba(255, 107, 107, 0.4);
+        }
+        
+        .auth-input {
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 1rem 1.25rem;
+            border-radius: 50px;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .auth-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+            background-color: rgba(255, 255, 255, 0.12);
+        }
+        
+        .auth-label {
+            display: block;
+            margin-bottom: 0.6rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            padding-left: 0.5rem;
+        }
+        
+        .auth-alert {
+            padding: 0.9rem 1.2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        
+        .auth-alert-danger {
+            background-color: rgba(220, 53, 69, 0.15);
+            border: 1px solid rgba(220, 53, 69, 0.2);
+            color: #ff8585;
+        }
+        
+        .auth-alert-success {
+            background-color: rgba(40, 167, 69, 0.15);
+            border: 1px solid rgba(40, 167, 69, 0.2);
+            color: #7dffaa;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            font-size: 1.8rem;
+            color: #ffffff;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .social-icon i {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .auth-divider {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem 0;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        .auth-divider::before, 
+        .auth-divider::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background: rgba(255,255,255,0.2);
+            margin: 0 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-logo">
+            <h1>Anime<span>Zone</span></h1>
+            <p>Découvrez et suivez vos animes préférés</p>
+        </div>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="auth-alert auth-alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        {% block content %}{% endblock %}
+        
+        <div class="auth-footer">
+            &copy; 2023 AnimeZone. Tous droits réservés.
+        </div>
+    </div>
+</body>
+</html>

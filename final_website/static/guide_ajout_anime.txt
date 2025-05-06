@@ -1,0 +1,181 @@
+# Guide d'ajout et de gestion d'anime dans Anime Zone
+
+Ce guide explique comment ajouter et gérer des saisons, des films et des épisodes dans l'application Anime Zone.
+
+## Structure des données
+
+Les données des animes sont stockées dans le fichier `static/data/anime.json`. Ce fichier contient un tableau JSON qui suit cette structure :
+
+```json
+{
+  "anime": [
+    {
+      "id": 1,
+      "title": "Titre de l'anime",
+      "description": "Description de l'anime",
+      "image": "URL de l'image de couverture",
+      "genres": ["genre1", "genre2", "genre3"],
+      "rating": 8.5,
+      "featured": true,
+      "seasons": [
+        {
+          "season_number": 1,
+          "title": "Saison 1: Nom de la saison",
+          "episodes": [
+            {
+              "episode_number": 1,
+              "title": "Titre de l'épisode",
+              "description": "Description de l'épisode",
+              "video_url": "URL de la vidéo (Google Drive)"
+            },
+            // Autres épisodes...
+          ]
+        },
+        // Autres saisons...
+      ],
+      "movies": [
+        {
+          "title": "Titre du film",
+          "description": "Description du film",
+          "image": "URL de l'image du film",
+          "duration": "Durée du film",
+          "release_year": 2022,
+          "video_url": "URL de la vidéo du film"
+        },
+        // Autres films...
+      ]
+    },
+    // Autres animes...
+  ]
+}
+```
+
+## Comment ajouter un nouvel anime
+
+1. Ouvrez le fichier `static/data/anime.json`
+2. Ajoutez un nouvel objet au tableau `anime` en suivant la structure ci-dessus
+3. Assurez-vous d'attribuer un ID unique (incrémentez le dernier ID utilisé)
+4. Remplissez tous les champs obligatoires (title, description, image, genres, rating)
+5. Ajoutez au moins une saison avec un épisode
+
+## Comment ajouter une nouvelle saison à un anime existant
+
+1. Trouvez l'anime dans le fichier JSON
+2. Ajoutez un nouvel objet au tableau `seasons` en incrémentant le `season_number`
+3. N'oubliez pas d'ajouter au moins un épisode à la saison
+
+Exemple:
+```json
+"seasons": [
+  // Saisons existantes...
+  {
+    "season_number": 3,
+    "title": "Saison 3: Nom de la saison",
+    "episodes": [
+      {
+        "episode_number": 1,
+        "title": "Premier épisode de la saison 3",
+        "description": "Description de l'épisode",
+        "video_url": "URL de la vidéo"
+      }
+    ]
+  }
+]
+```
+
+## Comment ajouter un film à un anime
+
+1. Trouvez l'anime dans le fichier JSON
+2. Si la propriété `movies` n'existe pas encore, créez-la comme un tableau vide
+3. Ajoutez un nouvel objet film au tableau `movies`
+
+Exemple:
+```json
+"movies": [
+  // Films existants...
+  {
+    "title": "Nouveau film",
+    "description": "Description du film",
+    "image": "URL de l'image",
+    "duration": "120 minutes",
+    "release_year": 2023,
+    "video_url": "URL de la vidéo"
+  }
+]
+```
+
+## Format des URLs vidéo (Google Drive)
+
+Pour les URLs Google Drive, utilisez le format standard des liens de partage :
+`https://drive.google.com/file/d/ID_DU_FICHIER/view?usp=sharing`
+
+L'application extraira automatiquement l'ID du fichier.
+
+## Conseils importants
+
+- Assurez-vous que le fichier JSON est toujours valide (vérifiez la syntaxe)
+- Testez après chaque modification
+- Pour les images, utilisez des URLs stables et durables
+- Pour les genres, utilisez des mots en minuscules et sans accents
+- Pour ajouter un anime à la page d'accueil, définissez `featured` sur `true`
+
+## Exemples complets
+
+### Ajouter un nouvel anime
+```json
+{
+  "id": 10,
+  "title": "Nouveau Anime",
+  "description": "Description du nouvel anime",
+  "image": "https://exemple.com/image.jpg",
+  "genres": ["action", "aventure"],
+  "rating": 8.0,
+  "featured": false,
+  "seasons": [
+    {
+      "season_number": 1,
+      "title": "Saison 1",
+      "episodes": [
+        {
+          "episode_number": 1,
+          "title": "Épisode 1",
+          "description": "Premier épisode",
+          "video_url": "https://drive.google.com/file/d/ID_FICHIER/view"
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Structure complète avec films
+```json
+{
+  "id": 2,
+  "title": "Demon Slayer",
+  "description": "Description...",
+  "image": "https://exemple.com/image.jpg",
+  "genres": ["action", "fantasy"],
+  "rating": 9.0,
+  "featured": true,
+  "seasons": [
+    {
+      "season_number": 1,
+      "title": "Saison 1: Arc du Début",
+      "episodes": [
+        // Épisodes...
+      ]
+    }
+  ],
+  "movies": [
+    {
+      "title": "Demon Slayer: Le train de l'infini",
+      "description": "Description du film...",
+      "image": "https://exemple.com/film.jpg",
+      "duration": "117 minutes",
+      "release_year": 2020,
+      "video_url": "https://drive.google.com/file/d/ID_FICHIER/view"
+    }
+  ]
+}
+```

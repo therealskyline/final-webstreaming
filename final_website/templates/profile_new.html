@@ -1,0 +1,146 @@
+{% extends 'base_new.html' %}
+
+{% block title %}Mon Profil - Anime Zone{% endblock %}
+
+{% block content %}
+<div class="container" style="margin-top: 2rem;">
+    <div class="profile-header">
+        <div class="profile-avatar-circle">
+            <span>{{ current_user.username[0]|upper }}</span>
+        </div>
+        <div class="profile-info">
+            <h1>{{ current_user.username }}</h1>
+            <p>Membre depuis {{ current_user.created_at.strftime('%d %B %Y') }}</p>
+        </div>
+    </div>
+
+    <div class="profile-tabs">
+        <div class="tab-container">
+            <div class="tab active" data-tab="favorites">
+                <span class="tab-text">Favoris</span>
+                <div class="tab-indicator"></div>
+            </div>
+            <a href="{{ url_for('settings') }}" class="tab">
+                <span class="tab-text">Paramètres</span>
+                <div class="tab-indicator"></div>
+            </a>
+        </div>
+    </div>
+
+    <style>
+        .profile-avatar-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-right: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .tab-container {
+            display: flex;
+            gap: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0;
+        }
+
+        .tab {
+            position: relative;
+            padding: 1rem 0;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .tab.active {
+            color: var(--accent-color);
+        }
+
+        .tab-indicator {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .tab.active .tab-indicator {
+            width: 100%;
+        }
+    </style>
+
+    <div class="tab-content" id="favorites-content">
+        <h2 class="section-title">Mes animes favoris</h2>
+
+        {% if favorite_anime %}
+        <div class="anime-grid">
+            {% for anime in favorite_anime %}
+            <a href="/anime/{{ anime.id }}" class="anime-card-link">
+                <div class="anime-card fade-in">
+                    <img src="{{ anime.image }}" alt="{{ anime.title }}" class="anime-card-image" loading="lazy">
+                    <div class="anime-card-body">
+                        <h3 class="anime-card-title">{{ anime.title }}</h3>
+                        <div class="anime-card-genres">
+                            {% for genre in anime.genres[:2] %}
+                            <span class="genre-tag">{{ genre|capitalize }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="anime-card-info">
+                            <div class="anime-card-rating">
+                                <span class="rating-star"><i class="fas fa-star"></i></span>
+                                <span>{{ anime.rating }}</span>
+                            </div>
+                        </div>
+                        <div class="anime-card-actions">
+                            <span class="btn btn-primary">Voir l'anime</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <i class="fas fa-heart"></i>
+            <p>Vous n'avez pas encore d'animes favoris.</p>
+            <a href="/search" class="btn btn-primary">Découvrir des animes</a>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="tab-content" id="settings-content" style="display: none;">
+        <h2 class="section-title">Paramètres du compte</h2>
+        <div class="empty-state">
+            <i class="fas fa-cog"></i>
+            <p>Les paramètres seront bientôt disponibles.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            contents.forEach(content => content.style.display = 'none');
+            const selectedContent = document.getElementById(`${tab.dataset.tab}-content`);
+            if (selectedContent) {
+                selectedContent.style.display = 'block';
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

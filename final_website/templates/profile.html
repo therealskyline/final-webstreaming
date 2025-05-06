@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %}Mon Profil{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="mb-4">Profil de {{ current_user.username }}</h1>
+            
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">En cours de visionnage</h3>
+                </div>
+                <div class="card-body">
+                    {% if watching_anime %}
+                        <div class="row">
+                            {% for item in watching_anime %}
+                                <div class="col-md-4 mb-4">
+                                    <div class="card h-100">
+                                        <img src="{{ item.anime.image }}" class="card-img-top" alt="{{ item.anime.title }}">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ item.anime.title }}</h5>
+                                            <p class="card-text">
+                                                Saison {{ item.progress.season_number }}, Épisode {{ item.progress.episode_number }}
+                                                <br>
+                                                {% if item.progress.completed %}
+                                                    <span class="badge bg-success">Terminé</span>
+                                                {% else %}
+                                                    <span class="badge bg-info">{{ (item.progress.time_position / 60)|int }} min</span>
+                                                {% endif %}
+                                            </p>
+                                            <a href="{{ url_for('player', anime_id=item.anime.id, season_num=item.progress.season_number, episode_num=item.progress.episode_number) }}" class="btn btn-primary">Continuer</a>
+                                        </div>
+                                        <div class="card-footer text-muted">
+                                            Dernière activité: {{ item.progress.last_watched.strftime('%d/%m/%Y') }}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="alert alert-info">
+                            Vous n'avez pas encore commencé à regarder d'animes. 
+                            <a href="{{ url_for('index') }}">Découvrez notre collection !</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Mes favoris</h3>
+                </div>
+                <div class="card-body">
+                    {% if favorite_anime %}
+                        <div class="row">
+                            {% for anime in favorite_anime %}
+                                <div class="col-md-4 mb-4">
+                                    <div class="card h-100">
+                                        <img src="{{ anime.image }}" class="card-img-top" alt="{{ anime.title }}">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ anime.title }}</h5>
+                                            <p class="card-text">{{ anime.description|truncate(100) }}</p>
+                                            <a href="{{ url_for('anime_detail', anime_id=anime.id) }}" class="btn btn-primary">Voir les détails</a>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small class="text-muted">
+                                                    {% for genre in anime.genres %}
+                                                        <span class="badge bg-secondary">{{ genre }}</span>
+                                                    {% endfor %}
+                                                </small>
+                                                <span class="badge bg-warning text-dark">★ {{ anime.rating }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="alert alert-info">
+                            Vous n'avez pas encore ajouté d'animes à vos favoris.
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

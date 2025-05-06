@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}Catégories - Anime Zone{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1 class="section-title">Parcourir par Catégories</h1>
+        
+        <!-- Tous les animes -->
+        <div style="margin-bottom: 4rem;">
+            <h2 style="margin-bottom: 2rem;">Tous les Animes</h2>
+            <div class="anime-grid">
+                {% for anime in all_anime %}
+                <div class="anime-card fade-in">
+                    <a href="/anime/{{ anime.id }}">
+                        <img src="{{ anime.image }}" alt="{{ anime.title }}" class="anime-card-image" loading="lazy">
+                    </a>
+                    <div class="anime-card-body">
+                        <h3 class="anime-card-title">{{ anime.title }}</h3>
+                        <div class="anime-card-genres">
+                            {% for genre in anime.genres %}
+                            <span class="genre-tag">{{ genre|capitalize }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="anime-card-info">
+                            <div class="anime-card-rating">
+                                <span class="rating-star"><i class="fas fa-star"></i></span>
+                                <span>{{ anime.rating }}</span>
+                            </div>
+                        </div>
+                        <div class="anime-card-actions">
+                            <a href="/anime/{{ anime.id }}" class="btn btn-outline">Regarder</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Navigation par genres -->
+        <div style="margin-top: 2rem; margin-bottom: 3rem;">
+            <h2 style="margin-bottom: 1.5rem;">Filtrer par Genre</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                {% for genre in genres %}
+                <a href="#{{ genre }}" class="filter-button">{{ genre|capitalize }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Animes par genre -->
+        {% for genre, anime_list in genres_dict.items() %}
+        <div id="{{ genre }}" style="margin-bottom: 4rem; scroll-margin-top: 100px;">
+            <h2 style="margin-bottom: 2rem; display: flex; align-items: center;">
+                {{ genre|capitalize }}
+                <span style="margin-left: 1rem; font-size: 1rem; color: var(--text-secondary);">({{ anime_list|length }} anime)</span>
+            </h2>
+            <div class="anime-grid">
+                {% for anime in anime_list %}
+                <div class="anime-card fade-in">
+                    <a href="/anime/{{ anime.id }}">
+                        <img src="{{ anime.image }}" alt="{{ anime.title }}" class="anime-card-image" loading="lazy">
+                    </a>
+                    <div class="anime-card-body">
+                        <h3 class="anime-card-title">{{ anime.title }}</h3>
+                        <div class="anime-card-genres">
+                            {% for anime_genre in anime.genres %}
+                            <span class="genre-tag {% if anime_genre == genre %}active{% endif %}">{{ anime_genre|capitalize }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="anime-card-info">
+                            <div class="anime-card-rating">
+                                <span class="rating-star"><i class="fas fa-star"></i></span>
+                                <span>{{ anime.rating }}</span>
+                            </div>
+                        </div>
+                        <div class="anime-card-actions">
+                            <a href="/anime/{{ anime.id }}" class="btn btn-outline">Regarder</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

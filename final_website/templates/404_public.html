@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Anime Zone</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        body {
+            background-color: #0f0f1a;
+            color: #e4e4ed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 2rem 0;
+        }
+        
+        .error-container {
+            text-align: center;
+            max-width: 700px;
+            margin: 5rem auto;
+            padding: 2rem;
+            background-color: rgba(30, 30, 50, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #7a30c5, #4261ef);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+        
+        .error-message {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #e4e4ed;
+        }
+        
+        .btn-primary {
+            background-color: #4261ef;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #3451df;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(66, 97, 239, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="error-container">
+            <div class="error-code">404</div>
+            <h2 class="error-message">Page Not Found</h2>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem auto;">
+                La page que vous recherchez a peut-être été supprimée, a changé de nom ou est temporairement indisponible.
+            </p>
+            <a href="/" class="btn btn-primary">Retour à l'accueil</a>
+        </div>
+    </div>
+</body>
+</html>

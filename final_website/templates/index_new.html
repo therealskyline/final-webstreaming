@@ -1,0 +1,303 @@
+{% extends 'base_new.html' %}
+
+{% block title %}Anime Zone - Accueil{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container hero-content">
+        <h1 class="hero-title">Bienvenue sur Anime Zone</h1>
+        <p class="hero-subtitle">
+            Reprenez votre visionnage et découvrez de nouveaux animes parmi notre vaste collection. Profitez de la meilleure expérience anime !
+        </p>
+        <a href="/search" class="btn btn-primary">Parcourir tous les animes</a>
+    </div>
+</section>
+
+<!-- 1. Continue Watching Section (First) -->
+{% if continue_watching %}
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Continuer à regarder</h2>
+
+        <div class="anime-grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
+            {% for item in continue_watching %}
+            <div class="watching-card" data-anime-id="{{ item.anime.id }}">
+                <div class="anime-card fade-in" onclick="window.location.href='/player/{{ item.anime.id }}/{{ item.progress.season_number }}/{{ item.progress.episode_number }}';" style="cursor: pointer;">
+                    <button onclick="event.stopPropagation(); removeFromWatching({{ item.anime.id }})" class="remove-button">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="anime-card-link">
+                        <img src="{{ item.anime.image }}" alt="{{ item.anime.title }}" class="anime-card-image" loading="lazy">
+                        <div class="anime-card-overlay">
+                            <div class="watch-status">
+                                <i class="fas fa-play-circle"></i> Regarder
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anime-card-body">
+                        <h3 class="anime-card-title">{{ item.anime.title }}</h3>
+                        <p class="anime-card-episode">
+                            S{{ item.progress.season_number }}E{{ item.progress.episode_number }}: {{ item.episode.title }}
+                        </p>
+                        <div class="anime-card-actions">
+                            <span class="btn btn-primary btn-reprendre">
+                                <i class="fas fa-play-circle"></i> Continuer l'épisode
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- 2. Discover New Series Section (Second) -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Découvrir de Nouvelles Séries</h2>
+
+        <!-- Filter Buttons -->
+        <div class="filter-section">
+            <div class="filter-buttons">
+                <a href="/" class="filter-button active">Tous</a>
+                <a href="/search?genre=action" class="filter-button">Action</a>
+                <a href="/search?genre=adventure" class="filter-button">Aventure</a>
+                <a href="/search?genre=comedy" class="filter-button">Comédie</a>
+                <a href="/search?genre=drama" class="filter-button">Drame</a>
+                <a href="/search?genre=fantasy" class="filter-button">Fantaisie</a>
+                <a href="/search" class="filter-button" style="background-color: var(--primary-color); color: white;"><i class="fas fa-search" style="margin-right: 5px;"></i>Plus</a>
+            </div>
+        </div>
+
+        <!-- Anime Grid -->
+        <div class="anime-grid">
+            {% for anime in anime_list %}
+            <a href="/anime/{{ anime.id }}" class="anime-card-link">
+                <div class="anime-card fade-in">
+                    <img src="{{ anime.image }}" alt="{{ anime.title }}" class="anime-card-image" loading="lazy">
+                    <div class="anime-card-body">
+                        <h3 class="anime-card-title">{{ anime.title }}</h3>
+                        <div class="anime-card-genres">
+                            {% for genre in anime.genres[:2] %}
+                            <span class="genre-tag">{{ genre|capitalize }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="anime-card-info">
+                            <div class="anime-card-rating">
+                                <span class="rating-star"><i class="fas fa-star"></i></span>
+                                <span>{{ anime.rating }}</span>
+                            </div>
+                        </div>
+                        <div class="anime-card-actions">
+                            <span class="btn btn-outline">Regarder</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+
+        <!-- View More Button -->
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="/search" class="btn btn-primary">Voir tous les animes</a>
+        </div>
+    </div>
+</section>
+
+<!-- 3. Favorites Section (Third) -->
+{% if favorite_anime %}
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Mes favoris</h2>
+
+        <div class="anime-grid">
+            {% for anime in favorite_anime %}
+            <a href="/anime/{{ anime.id }}" class="anime-card-link">
+                <div class="anime-card fade-in">
+                    <img src="{{ anime.image }}" alt="{{ anime.title }}" class="anime-card-image" loading="lazy">
+                    <div class="anime-card-body">
+                        <h3 class="anime-card-title">{{ anime.title }}</h3>
+                        <div class="anime-card-genres">
+                            {% for genre in anime.genres[:2] %}
+                            <span class="genre-tag">{{ genre|capitalize }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="anime-card-info">
+                            <div class="anime-card-rating">
+                                <span class="rating-star"><i class="fas fa-star"></i></span>
+                                <span>{{ anime.rating }}</span>
+                            </div>
+                        </div>
+                        <div class="anime-card-actions">
+                            <span class="btn btn-outline">Regarder</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<style>
+    /* Styles pour "Continuer à regarder" */
+    .watch-status {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-weight: 600;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .anime-card:hover .watch-status {
+        opacity: 1;
+    }
+
+    .anime-card-overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .anime-card:hover .anime-card-overlay {
+        opacity: 1;
+    }
+
+    .btn-reprendre {
+        width: 100%;
+        text-align: center;
+    }
+
+    .anime-card-episode {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        margin-bottom: 0.5rem;
+    }
+
+    /* Barre de progression sur la page anime */
+    .progress-bar {
+        height: 4px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 2px;
+        overflow: hidden;
+        margin-top: 5px;
+    }
+
+    .progress-fill {
+        height: 100%;
+        background-color: var(--accent-color);
+        border-radius: 2px;
+    }
+
+    /* Badges de statut */
+    .status-badge {
+        display: inline-block;
+        font-size: 0.75rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 12px;
+        margin-bottom: 0.5rem;
+    }
+
+    .status-badge.completed {
+        background-color: rgba(40, 167, 69, 0.2);
+        color: #7dffaa;
+    }
+
+    .status-badge.in-progress {
+        background-color: rgba(255, 193, 7, 0.2);
+        color: #ffd25a;
+    }
+
+    /* Styles pour les liens de titre */
+    .anime-title-link {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .anime-title-link:hover .anime-card-title {
+        color: var(--primary-color);
+    }
+
+    /* Améliorations pour les cartes */
+    .anime-card {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        background-color: var(--background-alt);
+        height: 100%;
+    }
+
+    .anime-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .anime-card-link {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px 8px 0 0;
+    }
+    .watching-card {
+            transition: opacity 0.3s ease;
+        }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    window.removeFromWatching = function(animeId) {
+        if (!animeId) return;
+        console.log("Removing anime:", animeId);
+        fetch('/remove-from-watching', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                'anime_id': animeId
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.success) {
+                const card = document.querySelector(`.watching-card[data-anime-id="${animeId}"]`);
+                if (card) {
+                    card.style.opacity = '0';
+                    setTimeout(() => {
+                        card.remove();
+                        // Si plus de cartes, masquer la section
+                        const section = document.querySelector('.section');
+                        if (section && section.querySelectorAll('.watching-card').length === 0) {
+                            section.style.display = 'none';
+                        }
+                    }, 300);
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+            alert('Une erreur est survenue lors de la suppression');
+        });
+    };
+
+});
+</script>
+{% endblock %}

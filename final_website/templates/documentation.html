@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+
+{% block title %}Documentation - Anime Zone{% endblock %}
+
+{% block content %}
+<div class="container" style="margin-top: 2rem;">
+    <h1 class="section-title">Anime Zone Documentation</h1>
+    
+    <div class="doc-section">
+        <h2>Introduction</h2>
+        <p>
+            Welcome to the Anime Zone documentation! This guide explains how to add new anime, seasons, and episodes to the platform.
+            The site uses a JSON-based data storage system, making it easy to manage content without a complex database.
+        </p>
+    </div>
+    
+    <div class="doc-section">
+        <h2>Data Structure</h2>
+        <p>
+            All anime data is stored in <code>static/data/anime.json</code>. This file contains an array of anime objects,
+            each with their own properties and nested arrays for seasons and episodes.
+        </p>
+        
+        <h3>Anime Object Structure</h3>
+        <pre>
+{
+  "id": 1,                          // Unique identifier for the anime
+  "title": "Anime Title",           // The title of the anime
+  "description": "Description...",  // A brief description of the anime
+  "image": "image_url",             // URL to the anime poster image
+  "genres": ["action", "fantasy"],  // Array of genres
+  "rating": 8.5,                    // Rating out of 10
+  "featured": true,                 // Whether to show on homepage
+  "seasons": []                     // Array of seasons (see below)
+}</pre>
+        
+        <h3>Season Object Structure</h3>
+        <pre>
+{
+  "season_number": 1,               // Season number
+  "episodes": []                    // Array of episodes (see below)
+}</pre>
+        
+        <h3>Episode Object Structure</h3>
+        <pre>
+{
+  "episode_number": 1,              // Episode number within the season
+  "title": "Episode Title",         // Title of the episode
+  "description": "Description...",  // Brief description of the episode
+  "video_url": "video_url"          // URL to the video file
+}</pre>
+    </div>
+    
+    <div class="doc-section">
+        <h2>How to Add New Content</h2>
+        
+        <h3>Adding a New Anime</h3>
+        <p>
+            To add a new anime, you need to add a new object to the <code>anime</code> array in the JSON file.
+            Make sure to give it a unique ID and include all the required fields.
+        </p>
+        <pre>
+// Example of adding a new anime
+{
+  "id": 21,  // Make sure this is unique
+  "title": "New Anime Title",
+  "description": "This is a description of the new anime.",
+  "image": "https://example.com/image.jpg",
+  "genres": ["action", "comedy"],
+  "rating": 8.7,
+  "featured": false,
+  "seasons": [
+    {
+      "season_number": 1,
+      "episodes": [
+        {
+          "episode_number": 1,
+          "title": "First Episode",
+          "description": "This is the first episode.",
+          "video_url": "https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing"
+        }
+      ]
+    }
+  ]
+}</pre>
+        
+        <h3>Adding a New Season to an Existing Anime</h3>
+        <p>
+            To add a new season, find the anime in the JSON file and add a new object to its <code>seasons</code> array.
+        </p>
+        <pre>
+// Find the anime by its ID and add a new season
+{
+  "season_number": 2,  // Make sure this is the next season number
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "First Episode of Season 2",
+      "description": "This is the first episode of season 2.",
+      "video_url": "https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing"
+    }
+  ]
+}</pre>
+        
+        <h3>Adding a New Episode to an Existing Season</h3>
+        <p>
+            To add a new episode, find the anime and season in the JSON file, and add a new object to the season's <code>episodes</code> array.
+        </p>
+        <pre>
+// Find the anime and season, then add a new episode
+{
+  "episode_number": 2,  // Make sure this is the next episode number in the season
+  "title": "Second Episode",
+  "description": "This is the second episode of the season.",
+  "video_url": "https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing"
+}</pre>
+    </div>
+    
+    <div class="doc-section">
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Always use unique IDs for anime entries</li>
+            <li>Keep descriptions concise but informative</li>
+            <li>Use high-quality images for anime posters</li>
+            <li>Make sure video URLs point to valid and playable videos</li>
+            <li>Backup the JSON file before making significant changes</li>
+            <li>Format genres consistently (lowercase, no spaces)</li>
+            <li>Set "featured: true" only for anime you want to highlight on the homepage</li>
+        </ul>
+    </div>
+    
+    <div class="doc-section">
+        <h2>Example: Complete Workflow</h2>
+        <p>Here's a complete example of how to add a new anime with multiple seasons and episodes:</p>
+        
+        <h3>Step 1: Create the Anime Object</h3>
+        <pre>
+{
+  "id": 21,
+  "title": "Dragon Hunter",
+  "description": "A young warrior embarks on a journey to hunt dragons and save his village.",
+  "image": "https://example.com/dragon-hunter.jpg",
+  "genres": ["action", "fantasy", "adventure"],
+  "rating": 8.9,
+  "featured": true,
+  "seasons": []
+}</pre>
+        
+        <h3>Step 2: Add the First Season</h3>
+        <pre>
+"seasons": [
+  {
+    "season_number": 1,
+    "episodes": []
+  }
+]</pre>
+        
+        <h3>Step 3: Add Episodes to the Season</h3>
+        <pre>
+"episodes": [
+  {
+    "episode_number": 1,
+    "title": "The Beginning",
+    "description": "Ryu discovers his destiny as a dragon hunter when his village is attacked.",
+    "video_url": "https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing"
+  },
+  {
+    "episode_number": 2,
+    "title": "Training Begins",
+    "description": "Ryu starts his training under a veteran dragon hunter.",
+    "video_url": "https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing"
+  }
+]</pre>
+        
+        <h3>Step 4: Add the Complete Object to the JSON File</h3>
+        <p>
+            Finally, add the complete anime object to the <code>anime</code> array in the JSON file.
+            Make sure to place it inside the array and use proper JSON formatting with commas between objects.
+        </p>
+    </div>
+</div>
+{% endblock %}

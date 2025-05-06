@@ -1,0 +1,583 @@
+{
+  "anime": [
+    {
+      "id": 1,
+      "title": "Attack on Titan",
+      "description": "In a world where humanity lives within cities surrounded by enormous walls due to the Titans, giant humanoid beings who devour humans seemingly without reason.",
+      "image": "https://m.media-amazon.com/images/M/MV5BNzc5MTczNDQtNDFjNi00ZDU5LWFkNzItOTE1NzQzMzdhNzMxXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_.jpg",
+      "genres": ["action", "drama", "fantasy"],
+      "rating": 9.0,
+      "featured": true,
+      "seasons": [{
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "Premier épisode",
+            "description": "Le début de l'aventure",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 2,
+            "title": "Deuxième épisode",
+            "description": "La suite de l'histoire",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 3,
+            "title": "Troisième épisode",
+            "description": "L'aventure continue",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          }
+        ]
+      }]
+    },
+    {
+      "id": 2,
+      "title": "Demon Slayer",
+      "description": "A youth begins a quest to fight demons and save his sister after his family is slaughtered and his sister is turned into a demon.",
+      "image": "https://m.media-amazon.com/images/M/MV5BZjZjNzI5MDctY2Y4YS00NmM4LTljMmItZTFkOTExNGI3ODRhXkEyXkFqcGdeQXVyNjc3MjQzNTI@._V1_.jpg",
+      "genres": ["action", "fantasy", "supernatural"],
+      "rating": 8.9,
+      "featured": true,
+      "seasons": [
+        {
+          "season_number": 1,
+          "title": "Saison 1: Arc du Début",
+          "episodes": [
+            {
+              "episode_number": 1,
+              "title": "Cruauté",
+              "description": "Tanjiro Kamado vit une vie paisible avec sa famille dans les montagnes, jusqu'à ce qu'un tragique événement ne bouleverse son existence.",
+              "video_url": "https://drive.google.com/file/d/1RFmZxtwsSFd2z93QuPwLNHEKDszr2Qmc/view"
+            },
+            {
+              "episode_number": 2,
+              "title": "Le démon des marécages",
+              "description": "Tanjiro commence son entraînement pour devenir un pourfendeur de démons.",
+              "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+            },
+            {
+              "episode_number": 3,
+              "title": "Sabito et Makomo",
+              "description": "Tanjiro rencontre deux mystérieux enfants pendant son entraînement.",
+              "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+            }
+          ]
+        },
+        {
+          "season_number": 2,
+          "title": "Saison 2: Arc du Train de l'Infini",
+          "episodes": [
+            {
+              "episode_number": 1,
+              "title": "Le train de l'infini",
+              "description": "Tanjiro et ses compagnons sont assignés à une mission sur un mystérieux train où de nombreux pourfendeurs ont disparu.",
+              "video_url": "https://drive.google.com/file/d/1RFmZxtwsSFd2z93QuPwLNHEKDszr2Qmc/view"
+            },
+            {
+              "episode_number": 2,
+              "title": "Rêves profonds",
+              "description": "Nos héros sont piégés dans les rêves créés par Enmu, la première Lune Inférieure.",
+              "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+            }
+          ]
+        },
+        {
+          "season_number": 3,
+          "title": "Saison 3: Arc du Village des Forgerons",
+          "episodes": [
+            {
+              "episode_number": 1,
+              "title": "Le Village des Forgerons",
+              "description": "Tanjiro se rend au Village des Forgerons pour réparer son épée.",
+              "video_url": "https://drive.google.com/file/d/1RFmZxtwsSFd2z93QuPwLNHEKDszr2Qmc/view"
+            },
+            {
+              "episode_number": 2,
+              "title": "Le Pilier de l'Amour",
+              "description": "Rencontre avec Mitsuri Kanroji, le Pilier de l'Amour.",
+              "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+            }
+          ]
+        },
+        {
+          "season_number": 4,
+          "title": "Saison 4: Arc de l'Entraînement des Piliers",
+          "episodes": [
+            {
+              "episode_number": 1,
+              "title": "L'Entraînement commence",
+              "description": "Tanjiro et ses amis commencent leur entraînement avec les Piliers pour devenir plus forts.",
+              "video_url": "https://drive.google.com/file/d/1RFmZxtwsSFd2z93QuPwLNHEKDszr2Qmc/view"
+            },
+            {
+              "episode_number": 2,
+              "title": "Les techniques secrètes",
+              "description": "Nos héros apprennent les techniques les plus puissantes des Piliers.",
+              "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+            }
+          ]
+        }
+      ],
+      "movies": [
+        {
+          "title": "Demon Slayer: Le train de l'infini",
+          "description": "Tanjiro et ses compagnons embarquent dans le train de l'infini pour combattre un puissant démon qui a fait de nombreuses victimes parmi les pourfendeurs.",
+          "image": "https://m.media-amazon.com/images/M/MV5BODI2NjdlYWItMTE1ZC00YzI2LTlhZGQtNzE3NzA4MWM0ODYzXkEyXkFqcGdeQXVyNjU1OTg4OTM@._V1_.jpg",
+          "duration": "117 minutes",
+          "release_year": 2020,
+          "video_url": "https://drive.google.com/file/d/1RFmZxtwsSFd2z93QuPwLNHEKDszr2Qmc/view"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "One Piece",
+      "description": "Follows the adventures of Monkey D. Luffy and his pirate crew in order to find the greatest treasure ever left by the legendary Pirate, Gold Roger. The famous mystery treasure named 'One Piece'.",
+      "image": "https://m.media-amazon.com/images/M/MV5BODcwNWE3OTMtMDc3MS00NDFjLWE1OTAtNDU3NjgxODMxY2UyXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg",
+      "genres": ["action", "adventure", "comedy", "fantasy"],
+      "rating": 8.8,
+      "featured": true,
+      "seasons": [{
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "Je suis Luffy ! Celui qui deviendra le roi des pirates !",
+            "description": "Monkey D. Luffy est un jeune homme qui rêve de devenir le Roi des Pirates en trouvant le 'One Piece', le trésor ultime rassemblé par Gol D. Roger, le Roi des Pirates exécuté il y a 22 ans.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 2,
+            "title": "Le grand épéiste apparaît ! Le chasseur de pirates Roronoa Zoro",
+            "description": "Luffy arrive à Shells Town où il rencontre Koby, un jeune garçon forcé à servir l'équipage de la pirate Alvida. Luffy décide d'aider Koby à réaliser son rêve de devenir un Marine.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 3,
+            "title": "Morgan contre Luffy ! Qui est cette jolie jeune fille ?",
+            "description": "Luffy affronte le capitaine Morgan pour sauver Zoro et la petite fille qui l'a aidé. Après avoir vaincu Morgan, Luffy et Zoro partent ensemble en tant que pirates.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          }
+        ]
+      }]
+    },
+    {
+      "id": 4,
+      "title": "Solo Leveling",
+      "description": "In a world where hunters – humans who possess magical abilities – must battle deadly monsters to protect humanity, Sung Jinwoo, the weakest hunter of all mankind, finds himself in a mysterious dungeon where he awakens an incredible power.",
+      "image": "https://m.media-amazon.com/images/M/MV5BZjE2OWU5Y2UtY2JkNC00ZDU1LWI5NmItNWMzNGUxMDg5ZjEwXkEyXkFqcGdeQXVyODMyNTM0MjM@._V1_.jpg",
+      "genres": ["action", "adventure", "fantasy", "supernatural"],
+      "rating": 8.6,
+      "featured": true,
+      "seasons": [{
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "Je suis un chasseur de rang E",
+            "description": "Sung Jinwoo est le plus faible des chasseurs. Lors d'un raid qui tourne mal, il découvre un pouvoir mystérieux qui pourrait changer sa vie.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 2,
+            "title": "Niveau supérieur",
+            "description": "Après avoir survécu au donjon double, Jinwoo commence à remarquer des changements dans ses capacités. Une nouvelle mission l'attend.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 3,
+            "title": "Le système",
+            "description": "Jinwoo découvre qu'il peut voir une interface qui lui permet de monter de niveau. Il commence à comprendre le potentiel de ce pouvoir unique.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          }
+        ]
+      }]
+    },
+    {
+      "id": 5,
+      "title": "My Hero Academia",
+      "description": "In a world where people with superpowers (called Quirks) are the norm, Izuku Midoriya has dreams of one day becoming a hero, despite being bullied for not having a Quirk.",
+      "image": "https://m.media-amazon.com/images/M/MV5BNmQzYmE2MGEtZjk4YS00YmVjLWEwZWMtODRkMjc4MTM5N2I3XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg",
+      "genres": ["action", "adventure", "comedy", "superhero"],
+      "rating": 8.4,
+      "featured": false,
+      "seasons": [{
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "Izuku Midoriya: Origin",
+            "description": "Izuku Midoriya desperately wants to be a hero, but he is one of the few people born without a 'Quirk', which are now common. Unlikely to ever make his dream a reality, his life changes after a chance encounter with the number one hero and his idol, All Might.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 2,
+            "title": "What It Takes to Be a Hero",
+            "description": "All Might tells Izuku that he can become a hero, and proposes to train him to help him get into U.A., Japan's top hero academy.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 3,
+            "title": "Roaring Muscles",
+            "description": "Izuku starts his 10-month training to strengthen his body enough to inherit All Might's Quirk.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          }
+        ]
+      }]
+    },
+    {
+      "id": 6,
+      "title": "Jujutsu Kaisen",
+      "description": "A boy swallows a cursed talisman - the finger of a demon - and becomes cursed himself. He enters a shaman school to be able to locate the demon's other body parts and thus exorcise himself.",
+      "image": "https://m.media-amazon.com/images/M/MV5BNGY4MTg3NzgtMmFkZi00NTg5LWExMmEtMWI3YzI1ODdmMWQ1XkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg",
+      "genres": ["action", "fantasy", "horror", "supernatural"],
+      "rating": 8.7,
+      "featured": false,
+      "seasons": [{
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "Ryomen Sukuna",
+            "description": "Yuji Itadori, an unnaturally fit high school student, meets with Megumi Fushiguro, a sorcerer who informs him of a high-grade cursed charm talisman that his school found.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 2,
+            "title": "For Myself",
+            "description": "Itadori officially starts out as a first-year at Jujutsu High, meeting his classmates Nobara Kugisaki and Megumi Fushiguro.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 3,
+            "title": "Girl of Steel",
+            "description": "A cursed spirit lurks in an abandoned detention center as Itadori, Fushiguro, and Kugisaki undertake their first mission together.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          }
+        ]
+      }]
+    },
+    {
+      "id": 7,
+      "title": "Fullmetal Alchemist: Brotherhood",
+      "description": "Two brothers search for a Philosopher's Stone after an attempt to revive their deceased mother goes awry and leaves them in damaged physical forms.",
+      "image": "https://m.media-amazon.com/images/M/MV5BZmEzN2YzOTItMDI5MS00MGU4LWI1NWQtOTg5ZThhNGQwYTEzXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
+      "genres": ["action", "adventure", "drama", "fantasy"],
+      "rating": 9.1,
+      "featured": false,
+      "seasons": [{
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "Fullmetal Alchemist",
+            "description": "Brothers Edward and Alphonse Elric hoped to resurrect their dead mother but failed, losing parts of their bodies. Years later, Ed (now with mechanical arm and leg) hopes to become a State Alchemist to find the Philosopher's Stone to restore Al (now just a soul in a suit of armor).",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 2,
+            "title": "The First Day",
+            "description": "The Elric brothers travel to the town of Liore, where a priest named Father Cornello is attracting followers to the religion of Leto.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 3,
+            "title": "City of Heresy",
+            "description": "Edward and Alphonse continue their investigation of Father Cornello and his fake miracles in Liore.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          }
+        ]
+      }]
+    },
+    {
+      "id": 8,
+      "title": "Death Note",
+      "description": "An intelligent high school student goes on a secret crusade to eliminate criminals from the world after discovering a notebook capable of killing anyone whose name is written into it.",
+      "image": "https://m.media-amazon.com/images/M/MV5BNjRiNmNjMmMtN2U2Yi00ODgxLTk3OTMtMmI1MTI1NjYyZTEzXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
+      "genres": ["crime", "drama", "mystery", "psychological", "supernatural"],
+      "rating": 9.0,
+      "featured": false,
+      "seasons": [{
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "Rebirth",
+            "description": "Light Yagami discovers a mysterious notebook that kills anyone whose name is written in it. He decides to use it to rid the world of criminals.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 2,
+            "title": "Confrontation",
+            "description": "Light experiments with the Death Note's limitations as the police begin to notice the strange deaths of criminals.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 3,
+            "title": "Dealings",
+            "description": "The famous detective L begins to investigate the mysterious deaths, while Light continues to eliminate criminals.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          }
+        ]
+      }]
+    },
+    {
+      "id": 9,
+      "title": "Naruto",
+      "description": "Follows the journey of Naruto Uzumaki, a young ninja who seeks to gain recognition from his peers and dreams of becoming the Hokage, the leader of his village.",
+      "image": "https://m.media-amazon.com/images/M/MV5BZmQ5NGFiNWEtMmMyMC00MDdiLTg4YjktOGY5Yzc2MDUxMTE1XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
+      "genres": ["action", "adventure", "fantasy"],
+      "rating": 8.3,
+      "featured": false,
+      "seasons": [{
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "Enter: Naruto Uzumaki!",
+            "description": "Introduction to Naruto Uzumaki, a mischievous young ninja who dreams of becoming the Hokage, the leader of his village.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 2,
+            "title": "My Name is Konohamaru!",
+            "description": "Naruto meets Konohamaru, the grandson of the Third Hokage, who wants to learn Naruto's techniques to defeat his grandfather.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 3,
+            "title": "Sasuke and Sakura: Friends or Foes?",
+            "description": "Naruto, Sasuke, and Sakura are assigned to Team 7 under Kakashi Hatake and begin to form their dynamics.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          }
+        ]
+      }]
+    },
+    {
+      "id": 10,
+      "title": "Hunter x Hunter",
+      "description": "Gon Freecss aspires to become a Hunter, an exceptional being capable of greatness. With his friends and his potential, he seeks out his father, who left him when he was younger.",
+      "image": "https://m.media-amazon.com/images/M/MV5BZjNmZDhkN2QtNDYyZC00YzJmLTg0ODUtN2FjNjhhMzE3ZmUxXkEyXkFqcGdeQXVyNjc2NjA5MTU@._V1_.jpg",
+      "genres": ["action", "adventure", "fantasy"],
+      "rating": 9.0,
+      "featured": false,
+      "seasons": [{
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "Departure × And × Friends",
+            "description": "Gon Freecss leaves his home on Whale Island to take the Hunter Exam, following in his father's footsteps to find him.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 2,
+            "title": "Test × Of × Tests",
+            "description": "Gon and his new friends Kurapika and Leorio travel to the site of the Hunter Exam. They meet many other applicants and begin the first phase of the exam.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 3,
+            "title": "Rivals × In × Survival",
+            "description": "The first phase of the Hunter Exam continues as the applicants follow Satotz through the Milsy Wetlands, also known as the 'Swindler's Swamp.'",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          }
+        ]
+      }]
+    },
+    {
+      "id": 11,
+      "title": "Chainsaw Man",
+      "description": "Denji is robbed of a normal teenage life, left with nothing but his deadbeat father's overwhelming debt. His only companion is his devil dog, Pochita, with whom he slays devils for the yakuza to make money.",
+      "image": "https://m.media-amazon.com/images/M/MV5BZjY5MDFhZTgtOGVhMi00NTUzLTk5NjktNmRlMjI2NzI3OWRlXkEyXkFqcGdeQXVyMTMzNDExODE5._V1_.jpg",
+      "genres": ["action", "horror", "supernatural"],
+      "rating": 8.5,
+      "featured": false,
+      "seasons": [{
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "Dog & Chainsaw",
+            "description": "Denji, a poor young man who works as a devil hunter to pay off his deceased father's yakuza debt, is killed by the Zombie Devil. His devil dog Pochita merges with him, reviving him as 'Chainsaw Man'.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 2,
+            "title": "Arrival in Tokyo",
+            "description": "Denji joins the Public Safety Devil Hunters and meets his new team members, including his new boss Makima.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 3,
+            "title": "Meowy's Whereabouts",
+            "description": "Denji's team is tasked with finding and slaying the Fiend who has been terrorizing a part of Tokyo.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          }
+        ]
+      }]
+    },
+    {
+      "id": 12,
+      "title": "Spy x Family",
+      "description": "A spy on an undercover mission gets married and adopts a child as part of his cover. His wife and daughter have secrets of their own, and all three must strive to keep together.",
+      "image": "https://m.media-amazon.com/images/M/MV5BMzJhMDgwOWMtMTJiOC00YTVjLTg4YmYtYTdiNGFlOWNhYzI3XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_.jpg",
+      "genres": ["action", "comedy", "slice of life"],
+      "rating": 8.5,
+      "featured": false,
+      "seasons": [{
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "Operation Strix",
+            "description": "Master spy Twilight is tasked with a new mission that requires him to create a family in order to infiltrate an elite school.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 2,
+            "title": "Secure a Wife",
+            "description": "In his search for a wife, Twilight encounters Yor Briar, an assassin who is also in need of a fake partner to maintain her cover.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 3,
+            "title": "Prepare for the Interview",
+            "description": "The newly formed Forger family must prepare for the interview at Eden Academy, the school that Twilight needs to infiltrate.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          }
+        ]
+      }]
+    },
+    {
+      "id": 13,
+      "title": "Vinland Saga",
+      "description": "Thorfinn pursues a journey with his father's killer in order to take revenge and end his life in a duel as an honorable warrior and pay his father an homage.",
+      "image": "https://m.media-amazon.com/images/M/MV5BN2UwOTMwMjMtZTE5MS00YmY4LTg4YjAtZDE3ZTg3YTU5MmQ2XkEyXkFqcGdeQXVyODEyMDIxNDY@._V1_.jpg",
+      "genres": ["action", "adventure", "drama", "historical"],
+      "rating": 8.8,
+      "featured": false,
+      "seasons": [{
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "Somewhere Not Here",
+            "description": "Thorfinn, son of one of the Vikings' greatest warriors, is among the finest fighters in the merry band of mercenaries run by the cunning Askeladd.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 2,
+            "title": "The Axe",
+            "description": "As a young Thorfinn grows up in Iceland, his father Thors teaches him about peace and war.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 3,
+            "title": "Troll",
+            "description": "Askeladd's band arrives at a village and encounters resistance from the locals. Thorfinn continues to challenge Askeladd to duels.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          }
+        ]
+      }]
+    },
+    {
+      "id": 14,
+      "title": "Bleach",
+      "description": "High school student Ichigo Kurosaki, who has the ability to see ghosts, gains soul reaper powers from Rukia Kuchiki and sets out to save the world from 'Hollows'.",
+      "image": "https://m.media-amazon.com/images/M/MV5BZjE0YjVjODQtZGY2NS00MDcyLThhMDAtZGQwMTZiOWNmNjRiXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
+      "genres": ["action", "adventure", "supernatural"],
+      "rating": 8.2,
+      "featured": false,
+      "seasons": [{
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "The Day I Became a Shinigami",
+            "description": "Ichigo Kurosaki is a teenager who can see ghosts. His life changes when he meets Rukia Kuchiki, a Soul Reaper who is hunting a Hollow.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 2,
+            "title": "A Shinigami's Work",
+            "description": "Ichigo struggles with his new responsibilities as a substitute Soul Reaper after Rukia transfers her powers to him.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 3,
+            "title": "The Older Brother's Wish, the Younger Sister's Wish",
+            "description": "Ichigo and Rukia face a Hollow that's targeting a young boy who lost his sister to an accident.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          }
+        ]
+      }]
+    },
+    {
+      "id": 15,
+      "title": "Tokyo Ghoul",
+      "description": "A Tokyo college student is attacked by a ghoul, a superpowered human who feeds on human flesh. He survives, but has become part ghoul and becomes a fugitive on the run.",
+      "image": "https://m.media-amazon.com/images/M/MV5BNjAwMjEzNTExN15BMl5BanBnXkFtZTgwNDU5OTUyMDE@._V1_.jpg",
+      "genres": ["action", "drama", "horror", "supernatural"],
+      "rating": 7.9,
+      "featured": false,
+      "seasons": [{
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "Tragedy",
+            "description": "Ken Kaneki goes on a date with a girl named Rize, who turns out to be a ghoul. After a near-death experience, he wakes up in the hospital, where he discovers he has been transformed into a half-ghoul.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 2,
+            "title": "Incubation",
+            "description": "Kaneki struggles to adjust to his new life as a half-ghoul and learns about ghoul society from the staff at Anteiku, a café run by ghouls.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 3,
+            "title": "Dove",
+            "description": "Kaneki learns more about the CCG, the government organization that hunts ghouls, and meets investigators Kureo Mado and Koutarou Amon.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          }
+        ]
+      }]
+    },
+    {
+      "id": 16,
+      "title": "Dragon Ball Z",
+      "description": "After learning that he is from another planet, a warrior named Goku and his friends are prompted to defend it from an onslaught of extraterrestrial enemies.",
+      "image": "https://m.media-amazon.com/images/M/MV5BNGM5MTEyZDItZWNhOS00NzNkLTgwZTAtNWIzY2IzZmExOWMxXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
+      "genres": ["action", "adventure", "fantasy"],
+      "rating": 8.7,
+      "featured": false,
+      "seasons": [{
+        "season_number": 1,
+        "episodes": [
+          {
+            "episode_number": 1,
+            "title": "The New Threat",
+            "description": "Five years have passed since Goku's victory at the World Tournament. He has married Chi-Chi and now has a son named Gohan. Suddenly, a mysterious warrior named Raditz arrives on Earth and reveals a shocking secret about Goku's past.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 2,
+            "title": "Reunions",
+            "description": "Raditz kidnaps Gohan and demands that Goku kill 100 humans to prove his Saiyan nature. Piccolo approaches Goku with a plan to team up against their common enemy.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          },
+          {
+            "episode_number": 3,
+            "title": "Unlikely Alliance",
+            "description": "Goku and Piccolo continue their desperate battle against Raditz. They realize their only hope is Piccolo's new special technique, but it requires time to charge.",
+            "video_url": "https://drive.google.com/file/d/1MXN72LKpkLUEr7jM8tOloBgIjxNyoxdj/view?usp=sharing"
+          }
+        ]
+      }]
+    }
+  ]
+}
