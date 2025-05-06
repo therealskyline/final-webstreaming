@@ -1,0 +1,45 @@
+5. Solo Login []
+6. Solo Necromancy []
+7. Solo Spell Caster []
+8. Worn and Torn Newbie []
+
+Choisir un numéro (ou Entrée pour continuer): 1
+
+Détails de I May Be a Guild Receptionist, but I'll Solo Any Boss to Clock Out on 
+Time
+Langues: VOSTFR
+2025-05-03 20:15:22,655 - INFO - HTTP Request: GET https://anime-sama.fr/catalogue/?search=I%20May%20Be%20a%20Guild%20Receptionist,%20but%20I'll%20Solo%20Any%20Boss%20to%20Clock%20Out%20on%20Time "HTTP/1.1 200 OK"
+2025-05-03 20:15:22,797 - INFO - HTTP Request: GET https://anime-sama.fr/catalogue/i-may-be-a-guild-receptionist-but-ill-solo-any-boss-to-clock-out-on-time/ "HTTP/1.1 200 OK"
+
+Saisons disponibles:
+1. Saison 1
+
+Choisir une saison (numéro ou 'full' pour tout): 1
+
+Saison sélectionnée: Saison 1
+2025-05-03 20:15:24,688 - INFO - HTTP Request: GET https://anime-sama.fr/catalogue/i-may-be-a-guild-receptionist-but-ill-solo-any-boss-to-clock-out-on-time/saison1/vostfr/ "HTTP/1.1 200 OK"
+2025-05-03 20:15:24,717 - INFO - HTTP Request: GET https://anime-sama.fr/catalogue/i-may-be-a-guild-receptionist-but-ill-solo-any-boss-to-clock-out-on-time/saison1/vostfr/episodes.js?filever=3785 "HTTP/1.1 200 OK"
+2025-05-03 20:15:24,939 - INFO - HTTP Request: GET https://anime-sama.fr/catalogue/i-may-be-a-guild-receptionist-but-ill-solo-any-boss-to-clock-out-on-time/saison1/vf/ "HTTP/1.1 404 Not Found"
+2025-05-03 20:15:24,944 - INFO - HTTP Request: GET https://anime-sama.fr/catalogue/i-may-be-a-guild-receptionist-but-ill-solo-any-boss-to-clock-out-on-time/saison1/vkr/ "HTTP/1.1 404 Not Found"
+2025-05-03 20:15:24,947 - INFO - HTTP Request: GET https://anime-sama.fr/catalogue/i-may-be-a-guild-receptionist-but-ill-solo-any-boss-to-clock-out-on-time/saison1/vqc/ "HTTP/1.1 404 Not Found"
+2025-05-03 20:15:24,948 - INFO - HTTP Request: GET https://anime-sama.fr/catalogue/i-may-be-a-guild-receptionist-but-ill-solo-any-boss-to-clock-out-on-time/saison1/va/ "HTTP/1.1 404 Not Found"
+2025-05-03 20:15:24,949 - INFO - HTTP Request: GET https://anime-sama.fr/catalogue/i-may-be-a-guild-receptionist-but-ill-solo-any-boss-to-clock-out-on-time/saison1/vcn/ "HTTP/1.1 404 Not Found"
+2025-05-03 20:15:24,966 - INFO - HTTP Request: GET https://anime-sama.fr/catalogue/i-may-be-a-guild-receptionist-but-ill-solo-any-boss-to-clock-out-on-time/saison1/vj/ "HTTP/1.1 404 Not Found"
+2025-05-03 20:15:24,967 - INFO - HTTP Request: GET https://anime-sama.fr/catalogue/i-may-be-a-guild-receptionist-but-ill-solo-any-boss-to-clock-out-on-time/saison1/vf2/ "HTTP/1.1 404 Not Found"
+2025-05-03 20:15:24,976 - INFO - HTTP Request: GET https://anime-sama.fr/catalogue/i-may-be-a-guild-receptionist-but-ill-solo-any-boss-to-clock-out-on-time/saison1/vf1/ "HTTP/1.1 404 Not Found"
+
+Épisodes disponibles:
+1. Episode 1 [VOSTFR]
+2. Episode 2 [VOSTFR]
+3. Episode 3 [VOSTFR]
+4. Episode 4 [VOSTFR]
+5. Episode 5 [VOSTFR]
+6. Episode 6 [VOSTFR]
+7. Episode 7 [VOSTFR]
+8. Episode 8 [VOSTFR]
+9. Episode 9 [VOSTFR]
+10. Episode 10 [VOSTFR]
+11. Episode 11 [VOSTFR]
+12. Episode 12 [VOSTFR]
+
+Sélectionner les épisodes: 

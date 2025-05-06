@@ -1,0 +1,36 @@
+Démarrage du téléchargement...
+Downloaded ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0/1 -:--:--
+Episode 1 oneupload.to ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0% ?  2025-05-03 18:12:58,087 - ERROR - ERROR: Unsupported URL: https://oneupload.net/embed-1j1tjy3qqbs7.html
+2025-05-03 18:12:58,087 - WARNING - Erreur non gérée pour oneupload.to, passage a
+Downloaded ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0/1 -:--:--
+Episode 1 video.sibne… ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0% ?  2025-05-03 18:12:59,073 - ERROR - ERROR: [generic] Unable to download webpage: HTTP Error 403: Forbidden (caused by <HTTPError 403: Forbidden>)
+Downloaded ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0/1 -:--:--
+Episode 1 oneupload.to ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0% ?  2025-05-03 18:13:00,770 - ERROR - ERROR: Unsupported URL: https://oneupload.net/embed-ze0dv8b88jpo.html
+2025-05-03 18:13:00,770 - WARNING - Erreur non gérée pour oneupload.to, passage a
+Downloaded ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0/1 -:--:--
+Episode 1 video.sibne… ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0% ?  2025-05-03 18:13:01,746 - ERROR - ERROR: [generic] Unable to download webpage: HTTP Error 403: Forbidden (caused by <HTTPError 403: Forbidden>)
+2025-05-03 18:13:01,746 - WARNING - Source bloquée (403): video.sibnet.ru
+2025-05-03 18:13:01,746 - WARNING - Language preference not respected. Using VOST
+Downloaded ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0/1 -:--:--
+Episode 1 oneupload.to ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0% ?  2025-05-03 18:13:02,955 - ERROR - ERROR: Unsupported URL: https://oneupload.net/embed-ze0dv8b88jpo.html
+2025-05-03 18:13:02,955 - WARNING - Erreur non gérée pour oneupload.to, passage a
+Downloaded ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0/1 -:--:--
+Episode 1 video.sibne… ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0% ?  2025-05-03 18:13:03,738 - ERROR - ERROR: [generic] Unable to download webpage: HTTP Error 403: Forbidden (caused by <HTTPError 403: Forbidden>)
+2025-05-03 18:13:03,738 - WARNING - Source bloquée (403): video.sibnet.ru
+Downloaded ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0/1 -:--:--
+Episode 1 oneupload.to ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0% ?  2025-05-03 18:13:04,972 - ERROR - ERROR: Unsupported URL: https://oneupload.net/embed-1j1tjy3qqbs7.html
+2025-05-03 18:13:04,972 - WARNING - Erreur non gérée pour oneupload.to, passage a
+Downloaded ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0/1 -:--:--
+Episode 1 video.sibne… ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0% ?  2025-05-03 18:13:05,765 - ERROR - ERROR: [generic] Unable to download webpage: HTTP Error 403: Forbidden (caused by <HTTPError 403: Forbidden>)
+Downloaded ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0/1 -:--:--
+Episode 1 sendvid.com ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0% ?  2
+Downloaded ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0/1 -:--:--
+Episode 1 oneupload.to ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0% ?  2025-05-03 18:13:07,452 - ERROR - ERROR: Unsupported URL: https://oneupload.net/embed-ze0dv8b88jpo.html
+2025-05-03 18:13:07,453 - WARNING - Erreur non gérée pour oneupload.to, passage a
+Downloaded ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0/1 -:--:--
+Episode 1 video.sibne… ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0% ?  2025-05-03 18:13:08,237 - ERROR - ERROR: [generic] Unable to download webpage: HTTP Error 403: Forbidden (caused by <HTTPError 403: Forbidden>)
+Downloaded ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 0:00:12
+
+Téléchargement terminé !
+
+Appuyez sur Entrée pour continuer...

@@ -1,0 +1,21 @@
+
+# Anime-Sama API Configuration
+prefer_languages = ["VF", "VOSTFR"]
+url = "https://anime-sama.fr/"
+download = true
+download_path = "./downloads"
+show_players = true
+max_retry_time = 1024
+format = "bestvideo[height<=720]+bestaudio/best[height<=720]"
+format_sort = "res:720,res:480,res:360"
+internal_player_command = "mpv"
+
+[players]
+prefers = []
+bans = []
+
+[concurrent_downloads]
+default = 1
+fragment = 3
+video = 5
+"*.mp4" = 3
